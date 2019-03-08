@@ -12,6 +12,9 @@
 		D52FC21C222A434D00BFC7D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D52FC21A222A434D00BFC7D2 /* Main.storyboard */; };
 		D52FC21E222A434F00BFC7D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D52FC21D222A434F00BFC7D2 /* Assets.xcassets */; };
 		D52FC221222A434F00BFC7D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D52FC21F222A434F00BFC7D2 /* LaunchScreen.storyboard */; };
+		D52FC229222A458800BFC7D2 /* MoneyDataEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52FC228222A458800BFC7D2 /* MoneyDataEnum.swift */; };
+		D52FC22B222A481D00BFC7D2 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52FC22A222A481D00BFC7D2 /* ShopViewController.swift */; };
+		D55E19A8222D59DC00A7E94E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D55E19A7222D59DC00A7E94E /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		D52FC21D222A434F00BFC7D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D52FC220222A434F00BFC7D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D52FC222222A434F00BFC7D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D52FC228222A458800BFC7D2 /* MoneyDataEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyDataEnum.swift; sourceTree = "<group>"; };
+		D52FC22A222A481D00BFC7D2 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		D55E19A7222D59DC00A7E94E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,7 @@
 		D52FC20A222A434D00BFC7D2 = {
 			isa = PBXGroup;
 			children = (
+				D55E19A7222D59DC00A7E94E /* Settings.bundle */,
 				D52FC215222A434D00BFC7D2 /* PayMoney_Korea */,
 				D52FC214222A434D00BFC7D2 /* Products */,
 			);
@@ -60,6 +67,8 @@
 				D52FC21D222A434F00BFC7D2 /* Assets.xcassets */,
 				D52FC21F222A434F00BFC7D2 /* LaunchScreen.storyboard */,
 				D52FC222222A434F00BFC7D2 /* Info.plist */,
+				D52FC228222A458800BFC7D2 /* MoneyDataEnum.swift */,
+				D52FC22A222A481D00BFC7D2 /* ShopViewController.swift */,
 			);
 			path = PayMoney_Korea;
 			sourceTree = "<group>";
@@ -122,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D55E19A8222D59DC00A7E94E /* Settings.bundle in Resources */,
 				D52FC221222A434F00BFC7D2 /* LaunchScreen.storyboard in Resources */,
 				D52FC21E222A434F00BFC7D2 /* Assets.xcassets in Resources */,
 				D52FC21C222A434D00BFC7D2 /* Main.storyboard in Resources */,
@@ -135,7 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D52FC22B222A481D00BFC7D2 /* ShopViewController.swift in Sources */,
 				D52FC219222A434D00BFC7D2 /* ViewController.swift in Sources */,
+				D52FC229222A458800BFC7D2 /* MoneyDataEnum.swift in Sources */,
 				D52FC217222A434D00BFC7D2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,15 +295,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FE546VX675;
 				INFOPLIST_FILE = PayMoney_Korea/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.daun.joung.PayMoney-Korea";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daun.joung.paymoneysimulation.korea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 arm64e";
 			};
 			name = Debug;
 		};
@@ -300,15 +315,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FE546VX675;
 				INFOPLIST_FILE = PayMoney_Korea/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.daun.joung.PayMoney-Korea";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daun.joung.paymoneysimulation.korea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 arm64e";
 			};
 			name = Release;
 		};

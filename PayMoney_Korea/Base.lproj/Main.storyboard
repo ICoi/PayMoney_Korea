@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,360 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PayMoney_Korea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9B-JC-cqZ">
+                                <rect key="frame" x="0.0" y="440.5" width="320" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="OZu-mr-ezi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="네~ 계산해주세요!"/>
+                                <connections>
+                                    <segue destination="PSy-5Z-KgV" kind="show" id="uq7-l9-GON"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Counter" translatesAutoresizingMaskIntoConstraints="NO" id="19B-tv-eCW">
+                                <rect key="frame" x="142" y="220" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="19B-tv-eCW" secondAttribute="height" multiplier="1:1" id="Rz8-f3-9KB"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpeechBubble" translatesAutoresizingMaskIntoConstraints="NO" id="4nb-9K-b0K">
+                                <rect key="frame" x="0.0" y="73" width="256" height="205"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4nb-9K-b0K" secondAttribute="height" multiplier="5:4" id="mE8-P9-ta2"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어서오세요 손님. 계산해드릴까요?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="25" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dMf-RK-EYs">
+                                <rect key="frame" x="38.5" y="96.5" width="179" height="123"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="f9B-JC-cqZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1MY-Rq-3fG"/>
+                            <constraint firstItem="4nb-9K-b0K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Al0-R4-nd2"/>
+                            <constraint firstItem="19B-tv-eCW" firstAttribute="top" secondItem="4nb-9K-b0K" secondAttribute="bottom" constant="-58" id="CRM-9k-Vbf"/>
+                            <constraint firstItem="dMf-RK-EYs" firstAttribute="height" secondItem="4nb-9K-b0K" secondAttribute="height" multiplier="0.6" id="FFo-vG-V3D"/>
+                            <constraint firstItem="dMf-RK-EYs" firstAttribute="width" secondItem="4nb-9K-b0K" secondAttribute="width" multiplier="0.7" id="RXL-SJ-Oel"/>
+                            <constraint firstItem="dMf-RK-EYs" firstAttribute="centerX" secondItem="4nb-9K-b0K" secondAttribute="centerX" id="ZzT-kF-gVs"/>
+                            <constraint firstItem="4nb-9K-b0K" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.8" id="h2S-Pt-V0y"/>
+                            <constraint firstItem="f9B-JC-cqZ" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="ic6-gl-g6M"/>
+                            <constraint firstItem="19B-tv-eCW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pcL-Wd-Q0D"/>
+                            <constraint firstItem="19B-tv-eCW" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.4" id="tue-E0-wW3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="19B-tv-eCW" secondAttribute="trailing" constant="50" id="xGP-IG-WH4"/>
+                            <constraint firstItem="f9B-JC-cqZ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.6" id="y0O-Iy-kB2"/>
+                            <constraint firstItem="dMf-RK-EYs" firstAttribute="centerY" secondItem="4nb-9K-b0K" secondAttribute="centerY" multiplier="0.9" id="yIo-nh-3B0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="144.92753623188406" y="35.491071428571423"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7ji-Db-84C">
+            <objects>
+                <viewController id="Rol-Rf-C6h" customClass="ViewController" customModule="PayMoney_Korea" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uYW-V4-YDN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMl-Oq-pOE">
+                                <rect key="frame" x="0.0" y="440.5" width="320" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="eaY-73-djy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="처음으로 돌아가기"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ceM-sa-ZdD"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Counter" translatesAutoresizingMaskIntoConstraints="NO" id="yWk-aa-ayB">
+                                <rect key="frame" x="142" y="220" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yWk-aa-ayB" secondAttribute="height" multiplier="1:1" id="cfs-2s-ZKz"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpeechBubble" translatesAutoresizingMaskIntoConstraints="NO" id="PNH-nd-6i7">
+                                <rect key="frame" x="0.0" y="73" width="256" height="205"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PNH-nd-6i7" secondAttribute="height" multiplier="5:4" id="xKr-iu-xny"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="또 오세요!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="VVn-so-M1i">
+                                <rect key="frame" x="38.5" y="96.5" width="179" height="123"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PNH-nd-6i7" firstAttribute="leading" secondItem="NiW-6p-BNK" secondAttribute="leading" id="7RN-oc-K5Q"/>
+                            <constraint firstItem="NiW-6p-BNK" firstAttribute="trailing" secondItem="yWk-aa-ayB" secondAttribute="trailing" constant="50" id="7pM-ar-3EC"/>
+                            <constraint firstItem="PNH-nd-6i7" firstAttribute="width" secondItem="NiW-6p-BNK" secondAttribute="width" multiplier="0.8" id="J6L-67-UyB"/>
+                            <constraint firstItem="VVn-so-M1i" firstAttribute="width" secondItem="PNH-nd-6i7" secondAttribute="width" multiplier="0.7" id="Jle-mC-dt0"/>
+                            <constraint firstItem="hMl-Oq-pOE" firstAttribute="centerX" secondItem="uYW-V4-YDN" secondAttribute="centerX" id="LkQ-EU-A90"/>
+                            <constraint firstItem="hMl-Oq-pOE" firstAttribute="centerY" secondItem="NiW-6p-BNK" secondAttribute="centerY" multiplier="1.6" id="NH9-dt-tXv"/>
+                            <constraint firstItem="yWk-aa-ayB" firstAttribute="centerY" secondItem="uYW-V4-YDN" secondAttribute="centerY" id="Uqz-qZ-Ide"/>
+                            <constraint firstItem="hMl-Oq-pOE" firstAttribute="width" secondItem="NiW-6p-BNK" secondAttribute="width" id="ZeQ-W2-Dep"/>
+                            <constraint firstItem="yWk-aa-ayB" firstAttribute="top" secondItem="PNH-nd-6i7" secondAttribute="bottom" constant="-58" id="bVx-qv-71I"/>
+                            <constraint firstItem="VVn-so-M1i" firstAttribute="centerY" secondItem="PNH-nd-6i7" secondAttribute="centerY" multiplier="0.9" id="gfJ-L8-fyQ"/>
+                            <constraint firstItem="yWk-aa-ayB" firstAttribute="width" secondItem="NiW-6p-BNK" secondAttribute="width" multiplier="0.4" id="hS8-cj-pVf"/>
+                            <constraint firstItem="VVn-so-M1i" firstAttribute="height" secondItem="PNH-nd-6i7" secondAttribute="height" multiplier="0.6" id="nSP-vR-mzP"/>
+                            <constraint firstItem="VVn-so-M1i" firstAttribute="centerX" secondItem="PNH-nd-6i7" secondAttribute="centerX" id="p8b-6F-bwp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NiW-6p-BNK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z5s-KQ-eq5" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1609" y="35"/>
+        </scene>
+        <!--Shop View Controller-->
+        <scene sceneID="mGN-Sp-nV9">
+            <objects>
+                <viewController id="PSy-5Z-KgV" customClass="ShopViewController" customModule="PayMoney_Korea" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iDY-OZ-eIP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Counter" translatesAutoresizingMaskIntoConstraints="NO" id="nAR-dd-9aL">
+                                <rect key="frame" x="172" y="105" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nAR-dd-9aL" secondAttribute="height" multiplier="1:1" id="4IY-8x-yFr"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="삼만육천오백이십원 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ain-9s-qgh">
+                                <rect key="frame" x="38.5" y="62" width="179" height="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="textColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ag2-wC-EGn" userLabel="MyWalletView">
+                                <rect key="frame" x="0.0" y="283" width="320" height="285"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJ8-CR-0o9" userLabel="10Button">
+                                        <rect key="frame" x="25" y="70.5" width="48" height="46.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="gJ8-CR-0o9" secondAttribute="height" multiplier="27:26" id="4jc-Jr-tgC"/>
+                                        </constraints>
+                                        <state key="normal" image="10won_front"/>
+                                        <connections>
+                                            <action selector="onClick10Won:" destination="PSy-5Z-KgV" eventType="touchUpInside" id="667-Bg-OEv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pps-S6-NPh" userLabel="50Button">
+                                        <rect key="frame" x="83" y="68.5" width="51" height="50.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Pps-S6-NPh" secondAttribute="height" multiplier="1:1" id="5Le-gn-pWq"/>
+                                        </constraints>
+                                        <state key="normal" image="50won_front"/>
+                                        <connections>
+                                            <action selector="onClick50Won:" destination="PSy-5Z-KgV" eventType="touchUpInside" id="ouD-91-Ncc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpV-PD-WJR" userLabel="100Button">
+                                        <rect key="frame" x="175" y="67" width="53.5" height="53.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="wpV-PD-WJR" secondAttribute="height" multiplier="1:1" id="3Fu-a2-fE4"/>
+                                        </constraints>
+                                        <state key="normal" image="100won_front"/>
+                                        <connections>
+                                            <action selector="onClick100Won:" destination="PSy-5Z-KgV" eventType="touchUpInside" id="9ju-0g-EJL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csm-to-mrD" userLabel="1000Button">
+                                        <rect key="frame" x="30" y="137" width="113" height="56.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="csm-to-mrD" secondAttribute="height" multiplier="136:68" id="YWB-Yu-B7n"/>
+                                        </constraints>
+                                        <state key="normal" image="1000won_front"/>
+                                        <connections>
+                                            <action selector="onClick1000Won:" destination="PSy-5Z-KgV" eventType="touchUpInside" id="gcH-mC-lgZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKt-bb-VO2" userLabel="5000Button">
+                                        <rect key="frame" x="172" y="137" width="118" height="56.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="iKt-bb-VO2" secondAttribute="height" multiplier="142:68" id="dFN-zk-sdo"/>
+                                        </constraints>
+                                        <state key="normal" image="5000won_front"/>
+                                        <connections>
+                                            <action selector="onClick5000Won:" destination="PSy-5Z-KgV" eventType="touchUpInside" id="sl0-yo-lo8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzT-w3-Hml" userLabel="10000Button">
+                                        <rect key="frame" x="25" y="208.5" width="123" height="56.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="IzT-w3-Hml" secondAttribute="height" multiplier="148:68" id="K1V-ud-mBW"/>
+                                        </constraints>
+                                        <state key="normal" image="10000won_front"/>
+                                        <connections>
+                                            <action selector="onClick10000Won:" destination="PSy-5Z-KgV" eventType="touchUpInside" id="CmW-w6-J0V"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jv-BY-WiG" userLabel="50000Button">
+                                        <rect key="frame" x="167" y="208.5" width="128" height="56.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="6Jv-BY-WiG" secondAttribute="height" multiplier="154:68" id="Usx-41-SbF"/>
+                                        </constraints>
+                                        <state key="normal" image="50000won_front"/>
+                                        <connections>
+                                            <action selector="onClick50000Won:" destination="PSy-5Z-KgV" eventType="touchUpInside" id="79V-tt-KDO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSK-fu-juC">
+                                        <rect key="frame" x="155" y="5" width="160" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="다시내기"/>
+                                        <connections>
+                                            <action selector="onClickReset:" destination="PSy-5Z-KgV" eventType="touchUpInside" id="b65-I1-sPF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqx-XU-Ux0" userLabel="500Button">
+                                        <rect key="frame" x="238.5" y="65.5" width="56.5" height="56.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Xqx-XU-Ux0" secondAttribute="height" multiplier="1:1" id="fkg-A2-fkm"/>
+                                        </constraints>
+                                        <state key="normal" image="500won_front"/>
+                                        <connections>
+                                            <action selector="onClick500Won:" destination="PSy-5Z-KgV" eventType="touchUpInside" id="9dR-PC-2Y8"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dmu-ol-qtl">
+                                        <rect key="frame" x="5" y="5" width="145" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.80206201109999997" green="0.79818731539999999" blue="0.80593670689999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="Pps-S6-NPh" firstAttribute="centerY" secondItem="Xqx-XU-Ux0" secondAttribute="centerY" id="3ON-PN-8Ae"/>
+                                    <constraint firstItem="fSK-fu-juC" firstAttribute="leading" secondItem="Dmu-ol-qtl" secondAttribute="trailing" constant="5" id="5Uk-gY-2NL"/>
+                                    <constraint firstItem="Xqx-XU-Ux0" firstAttribute="trailing" secondItem="6Jv-BY-WiG" secondAttribute="trailing" id="7T4-9r-0fX"/>
+                                    <constraint firstItem="fSK-fu-juC" firstAttribute="width" secondItem="Ag2-wC-EGn" secondAttribute="width" multiplier="0.5" id="7Y0-9g-cqF"/>
+                                    <constraint firstItem="Dmu-ol-qtl" firstAttribute="leading" secondItem="Ag2-wC-EGn" secondAttribute="leading" constant="5" id="83r-0f-Gl9"/>
+                                    <constraint firstItem="csm-to-mrD" firstAttribute="height" secondItem="6Jv-BY-WiG" secondAttribute="height" id="85C-mI-rLf"/>
+                                    <constraint firstItem="iKt-bb-VO2" firstAttribute="centerX" secondItem="6Jv-BY-WiG" secondAttribute="centerX" id="96f-id-agy"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Jv-BY-WiG" secondAttribute="trailing" constant="25" id="DZd-gO-WvS"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Jv-BY-WiG" secondAttribute="bottom" constant="20" id="IB1-Ca-afn"/>
+                                    <constraint firstItem="wpV-PD-WJR" firstAttribute="top" secondItem="fSK-fu-juC" secondAttribute="bottom" constant="20" id="Krz-pn-04J"/>
+                                    <constraint firstAttribute="trailing" secondItem="fSK-fu-juC" secondAttribute="trailing" constant="5" id="LHB-vl-JfZ"/>
+                                    <constraint firstItem="IzT-w3-Hml" firstAttribute="leading" secondItem="Ag2-wC-EGn" secondAttribute="leading" constant="25" id="LaJ-gt-KR3"/>
+                                    <constraint firstItem="Dmu-ol-qtl" firstAttribute="height" secondItem="fSK-fu-juC" secondAttribute="height" id="M6c-FD-7fa"/>
+                                    <constraint firstItem="wpV-PD-WJR" firstAttribute="height" secondItem="Xqx-XU-Ux0" secondAttribute="height" multiplier="0.95" id="Ngu-Qn-MxN"/>
+                                    <constraint firstItem="wpV-PD-WJR" firstAttribute="centerY" secondItem="Xqx-XU-Ux0" secondAttribute="centerY" id="Q5S-JP-Et7"/>
+                                    <constraint firstItem="gJ8-CR-0o9" firstAttribute="leading" secondItem="IzT-w3-Hml" secondAttribute="leading" id="Srm-vb-2gi"/>
+                                    <constraint firstItem="Pps-S6-NPh" firstAttribute="leading" secondItem="gJ8-CR-0o9" secondAttribute="trailing" constant="10" id="VzS-hw-acb"/>
+                                    <constraint firstItem="Xqx-XU-Ux0" firstAttribute="leading" secondItem="wpV-PD-WJR" secondAttribute="trailing" constant="10" id="XHt-a9-UlJ"/>
+                                    <constraint firstItem="iKt-bb-VO2" firstAttribute="top" secondItem="Xqx-XU-Ux0" secondAttribute="bottom" constant="15" id="YLj-hy-6KK"/>
+                                    <constraint firstItem="Pps-S6-NPh" firstAttribute="height" secondItem="Xqx-XU-Ux0" secondAttribute="height" multiplier="0.9" id="Yhh-WO-kmG"/>
+                                    <constraint firstItem="iKt-bb-VO2" firstAttribute="height" secondItem="6Jv-BY-WiG" secondAttribute="height" id="aU1-8L-liS"/>
+                                    <constraint firstItem="IzT-w3-Hml" firstAttribute="centerY" secondItem="6Jv-BY-WiG" secondAttribute="centerY" id="edm-lr-Q4A"/>
+                                    <constraint firstItem="csm-to-mrD" firstAttribute="centerY" secondItem="iKt-bb-VO2" secondAttribute="centerY" id="eks-zZ-RZp"/>
+                                    <constraint firstItem="IzT-w3-Hml" firstAttribute="top" secondItem="iKt-bb-VO2" secondAttribute="bottom" constant="15" id="f5g-3f-IVt"/>
+                                    <constraint firstItem="gJ8-CR-0o9" firstAttribute="centerY" secondItem="Xqx-XU-Ux0" secondAttribute="centerY" id="kZt-2g-u3s"/>
+                                    <constraint firstItem="gJ8-CR-0o9" firstAttribute="width" secondItem="Xqx-XU-Ux0" secondAttribute="width" multiplier="0.85" id="lse-Vh-iDD"/>
+                                    <constraint firstItem="fSK-fu-juC" firstAttribute="top" secondItem="Ag2-wC-EGn" secondAttribute="top" constant="5" id="pOH-P3-dSO"/>
+                                    <constraint firstItem="Xqx-XU-Ux0" firstAttribute="height" secondItem="6Jv-BY-WiG" secondAttribute="height" id="tNn-01-x1L"/>
+                                    <constraint firstItem="IzT-w3-Hml" firstAttribute="height" secondItem="6Jv-BY-WiG" secondAttribute="height" id="uRa-ho-Bak"/>
+                                    <constraint firstItem="csm-to-mrD" firstAttribute="centerX" secondItem="IzT-w3-Hml" secondAttribute="centerX" id="vIF-fd-ihM"/>
+                                    <constraint firstItem="6Jv-BY-WiG" firstAttribute="width" secondItem="Ag2-wC-EGn" secondAttribute="width" multiplier="0.4" id="xe1-Wg-Iik"/>
+                                    <constraint firstItem="Dmu-ol-qtl" firstAttribute="top" secondItem="fSK-fu-juC" secondAttribute="top" id="xpp-MZ-Z3h"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKg-rz-grf">
+                                <rect key="frame" x="0.0" y="233" width="320" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dHT-NR-SGd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="가게에서 나가기"/>
+                                <connections>
+                                    <segue destination="Rol-Rf-C6h" kind="show" id="bVQ-VW-SbU"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpeechBubble" translatesAutoresizingMaskIntoConstraints="NO" id="nF4-Le-lAS">
+                                <rect key="frame" x="0.0" y="-5" width="256" height="205"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nF4-Le-lAS" secondAttribute="height" multiplier="5:4" id="asK-fb-xEn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입니다." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrj-B6-uky">
+                                <rect key="frame" x="38.5" y="97" width="179" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="감사합니다 :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bK9-33-74K">
+                                <rect key="frame" x="10" y="183" width="152" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lda-ke-6h2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="smx-eL-Lfo" firstAttribute="bottom" secondItem="Ag2-wC-EGn" secondAttribute="bottom" id="4x7-F6-wth"/>
+                            <constraint firstItem="qKg-rz-grf" firstAttribute="centerX" secondItem="iDY-OZ-eIP" secondAttribute="centerX" id="87Y-ln-Mjr"/>
+                            <constraint firstItem="smx-eL-Lfo" firstAttribute="trailing" secondItem="nAR-dd-9aL" secondAttribute="trailing" constant="20" id="FsA-dE-6BR"/>
+                            <constraint firstItem="hrj-B6-uky" firstAttribute="height" secondItem="Ain-9s-qgh" secondAttribute="height" id="GgT-Yf-9Nl"/>
+                            <constraint firstItem="Ag2-wC-EGn" firstAttribute="centerX" secondItem="iDY-OZ-eIP" secondAttribute="centerX" id="H8u-AA-g72"/>
+                            <constraint firstItem="hrj-B6-uky" firstAttribute="top" secondItem="Ain-9s-qgh" secondAttribute="bottom" constant="3" id="Hqv-ac-gPg"/>
+                            <constraint firstItem="nAR-dd-9aL" firstAttribute="top" secondItem="nF4-Le-lAS" secondAttribute="bottom" constant="-95" id="K2A-CT-pnV"/>
+                            <constraint firstItem="hrj-B6-uky" firstAttribute="width" secondItem="Ain-9s-qgh" secondAttribute="width" id="KX2-9D-piV"/>
+                            <constraint firstItem="Ag2-wC-EGn" firstAttribute="top" secondItem="qKg-rz-grf" secondAttribute="bottom" id="Le2-q2-aZQ"/>
+                            <constraint firstItem="Ag2-wC-EGn" firstAttribute="width" secondItem="smx-eL-Lfo" secondAttribute="width" id="N1E-JT-yuL"/>
+                            <constraint firstItem="nAR-dd-9aL" firstAttribute="leading" secondItem="bK9-33-74K" secondAttribute="trailing" constant="10" id="NUj-rU-cn9"/>
+                            <constraint firstItem="nF4-Le-lAS" firstAttribute="leading" secondItem="smx-eL-Lfo" secondAttribute="leading" id="Poh-H2-jHw"/>
+                            <constraint firstItem="Ain-9s-qgh" firstAttribute="centerY" secondItem="nF4-Le-lAS" secondAttribute="centerY" multiplier="0.8" id="REn-9e-aoV"/>
+                            <constraint firstItem="nAR-dd-9aL" firstAttribute="width" secondItem="iDY-OZ-eIP" secondAttribute="width" multiplier="0.4" id="U1w-2y-I7X"/>
+                            <constraint firstItem="bK9-33-74K" firstAttribute="leading" secondItem="smx-eL-Lfo" secondAttribute="leading" constant="10" id="Xuj-E2-Ja3"/>
+                            <constraint firstItem="Ain-9s-qgh" firstAttribute="centerX" secondItem="nF4-Le-lAS" secondAttribute="centerX" id="cXW-gh-HLF"/>
+                            <constraint firstItem="qKg-rz-grf" firstAttribute="top" secondItem="bK9-33-74K" secondAttribute="bottom" id="e9i-nf-a0w"/>
+                            <constraint firstItem="nAR-dd-9aL" firstAttribute="bottom" secondItem="qKg-rz-grf" secondAttribute="top" id="hkN-Xd-3p7"/>
+                            <constraint firstItem="nF4-Le-lAS" firstAttribute="width" secondItem="smx-eL-Lfo" secondAttribute="width" multiplier="0.8" id="na2-ff-xT2"/>
+                            <constraint firstItem="qKg-rz-grf" firstAttribute="width" secondItem="iDY-OZ-eIP" secondAttribute="width" id="qq8-Vg-n0a"/>
+                            <constraint firstItem="hrj-B6-uky" firstAttribute="centerX" secondItem="Ain-9s-qgh" secondAttribute="centerX" id="tEr-34-Y5V"/>
+                            <constraint firstItem="Ain-9s-qgh" firstAttribute="width" secondItem="nF4-Le-lAS" secondAttribute="width" multiplier="0.7" id="xSn-lD-gKs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="smx-eL-Lfo"/>
+                    </view>
+                    <connections>
+                        <outlet property="moneyLabel" destination="Ain-9s-qgh" id="9aO-Ri-0AY"/>
+                        <outlet property="payingMoneyLabel" destination="Dmu-ol-qtl" id="A9c-pq-ARz"/>
+                        <outlet property="thankyouLabel" destination="bK9-33-74K" id="6GH-Oc-kGy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="473-md-yz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885" y="33.802816901408448"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="10000won_front" width="866" height="397"/>
+        <image name="1000won_front" width="792" height="399"/>
+        <image name="100won_front" width="87" height="87"/>
+        <image name="10won_front" width="176" height="170"/>
+        <image name="50000won_front" width="877" height="397"/>
+        <image name="5000won_front" width="840" height="403"/>
+        <image name="500won_front" width="100" height="100"/>
+        <image name="50won_front" width="71" height="71"/>
+        <image name="Counter" width="256" height="256"/>
+        <image name="SpeechBubble" width="256" height="256"/>
+    </resources>
 </document>
