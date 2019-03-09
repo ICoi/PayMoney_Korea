@@ -7,18 +7,29 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ShopViewController: UIViewController {
 
+    
+    let YUNA_IDENTIFIER = "com.apple.ttsbundle.Yuna-compact"
+    let YUNA_EXT_IDENTIFIER = "com.apple.ttsbundle.Yuna-premium"
+    let SORA_IDENTIFIER = "com.apple.ttsbundle.Sora-compact"
+    let SORA_EXT_IDENTIFIER = "com.apple.ttsbundle.Sora-premium"
+    
     @IBOutlet var moneyLabel: UILabel!
     
     @IBOutlet var payingMoneyLabel: UILabel!
     
-    @IBOutlet var thankyouLabel: UILabel!
+    @IBOutlet var greatView: UIView!
     
+    @IBOutlet var gameFinishView: UIView!
+    var gameMode : GameMode = GameMode.Payment_Easy
     var isPlaying : Bool = false
     
     var timer = Timer()
+    
+    let synthesizer = AVSpeechSynthesizer()
     
     var moneyList : [(value :Int, text :String)]! = []
     var payingMoney : Int = 0 {
@@ -26,6 +37,8 @@ class ShopViewController: UIViewController {
             payedMoneyCalculate()
         }
     }
+    
+    var selectedVoiceIdentifier : String?
     
     var needToPayMoney : Int = 0
     
@@ -38,10 +51,15 @@ class ShopViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        selectedVoiceIdentifier = UserDefaults.standard.string(forKey: "ChoiceVoice")
         setMoneyList()
         startGame()
         
         timer.invalidate()
+        
+        self.gameFinishView.isHidden = true
+        
+        
         
     }
     
@@ -50,8 +68,9 @@ class ShopViewController: UIViewController {
         needToPayMoney = moneyList.first?.value ?? 0
         payingMoney = 0
         moneyLabel.text = "\(moneyList.first?.text ?? "")원"
-        thankyouLabel.isHidden = true
+        greatView.isHidden = true
         isPlaying = true
+        playSound();
     }
     
     func finishGame () {
@@ -63,7 +82,7 @@ class ShopViewController: UIViewController {
             moneyList.remove(at: 0)
         }
         isPlaying = false
-        thankyouLabel.isHidden = false
+        greatView.isHidden = false
         
         // start the timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
@@ -76,7 +95,12 @@ class ShopViewController: UIViewController {
         
         if isTutorialComplete {
             print("Already tutorial complete")
-            moneyList = moneyData.shuffled()
+            if gameMode == GameMode.Payment_Easy {
+                moneyList = moneyDataEasy.shuffled()
+            
+            } else if gameMode == GameMode.Payment_Normal {
+                moneyList = moneyData.shuffled()
+            }
         } else {
             print("Need to show Tutorial")
             moneyList = tutorialMoney
@@ -91,6 +115,30 @@ class ShopViewController: UIViewController {
             finishGame()
         }
     }
+    // MARK : TTS
+    
+    func playSound() {
+        speakSound("\(moneyLabel.text!) 입니다.")
+    }
+    func speakSound(_ text: String) {
+        
+        let utterance : AVSpeechUtterance = AVSpeechUtterance(string: text)
+
+        if selectedVoiceIdentifier != nil {
+            utterance.voice = AVSpeechSynthesisVoice(identifier: selectedVoiceIdentifier!)
+        } else {
+            utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+        }
+        
+        if gameMode == GameMode.Payment_Easy {
+            utterance.rate = 0.35
+            
+        } else if gameMode == GameMode.Payment_Normal {
+            utterance.rate = 0.5
+        }
+        
+        synthesizer.speak(utterance)
+    }
     
     // MARK : Timer
     @objc func timerAction() {
@@ -102,7 +150,7 @@ class ShopViewController: UIViewController {
     
     
     @IBAction func onClickReset(_ sender: Any) {
-        startGame()
+        payingMoney = 0
     }
     
     @IBAction func onClick10Won(_ sender: Any) {
@@ -153,6 +201,17 @@ class ShopViewController: UIViewController {
         }
     }
     
+    @IBAction func onClickExit(_ sender: Any) {
+        self.gameFinishView.isHidden = false
+    }
     
+    
+    @IBAction func onClickTTSSound(_ sender: Any) {
+        playSound()
+    }
+    
+    @IBAction func onClickGoBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
 }

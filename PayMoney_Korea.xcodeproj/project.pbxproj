@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D52555E62234198E00CE6BBE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52555E52234198E00CE6BBE /* MenuViewController.swift */; };
+		D52555E922341E3300CE6BBE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52555E822341E3300CE6BBE /* AVFoundation.framework */; };
+		D52555EB22343E1600CE6BBE /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52555EA22343E1600CE6BBE /* BasicViewController.swift */; };
+		D52555ED22343E2700CE6BBE /* VoiceSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52555EC22343E2700CE6BBE /* VoiceSettingViewController.swift */; };
 		D52FC217222A434D00BFC7D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52FC216222A434D00BFC7D2 /* AppDelegate.swift */; };
 		D52FC219222A434D00BFC7D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52FC218222A434D00BFC7D2 /* ViewController.swift */; };
 		D52FC21C222A434D00BFC7D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D52FC21A222A434D00BFC7D2 /* Main.storyboard */; };
@@ -14,10 +18,14 @@
 		D52FC221222A434F00BFC7D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D52FC21F222A434F00BFC7D2 /* LaunchScreen.storyboard */; };
 		D52FC229222A458800BFC7D2 /* MoneyDataEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52FC228222A458800BFC7D2 /* MoneyDataEnum.swift */; };
 		D52FC22B222A481D00BFC7D2 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52FC22A222A481D00BFC7D2 /* ShopViewController.swift */; };
-		D55E19A8222D59DC00A7E94E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D55E19A7222D59DC00A7E94E /* Settings.bundle */; };
+		D56907B72232BB94004FB2F6 /* godoMaum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D56907B62232BB94004FB2F6 /* godoMaum.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D52555E52234198E00CE6BBE /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		D52555E822341E3300CE6BBE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D52555EA22343E1600CE6BBE /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		D52555EC22343E2700CE6BBE /* VoiceSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSettingViewController.swift; sourceTree = "<group>"; };
 		D52FC213222A434D00BFC7D2 /* PayMoney_Korea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayMoney_Korea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D52FC216222A434D00BFC7D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D52FC218222A434D00BFC7D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,7 +35,7 @@
 		D52FC222222A434F00BFC7D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D52FC228222A458800BFC7D2 /* MoneyDataEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyDataEnum.swift; sourceTree = "<group>"; };
 		D52FC22A222A481D00BFC7D2 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
-		D55E19A7222D59DC00A7E94E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		D56907B62232BB94004FB2F6 /* godoMaum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = godoMaum.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,18 +43,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D52555E922341E3300CE6BBE /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D52555E722341E3300CE6BBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D52555E822341E3300CE6BBE /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D52FC20A222A434D00BFC7D2 = {
 			isa = PBXGroup;
 			children = (
-				D55E19A7222D59DC00A7E94E /* Settings.bundle */,
+				D56907B62232BB94004FB2F6 /* godoMaum.ttf */,
 				D52FC215222A434D00BFC7D2 /* PayMoney_Korea */,
 				D52FC214222A434D00BFC7D2 /* Products */,
+				D52555E722341E3300CE6BBE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +87,9 @@
 				D52FC222222A434F00BFC7D2 /* Info.plist */,
 				D52FC228222A458800BFC7D2 /* MoneyDataEnum.swift */,
 				D52FC22A222A481D00BFC7D2 /* ShopViewController.swift */,
+				D52555E52234198E00CE6BBE /* MenuViewController.swift */,
+				D52555EA22343E1600CE6BBE /* BasicViewController.swift */,
+				D52555EC22343E2700CE6BBE /* VoiceSettingViewController.swift */,
 			);
 			path = PayMoney_Korea;
 			sourceTree = "<group>";
@@ -131,10 +152,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D55E19A8222D59DC00A7E94E /* Settings.bundle in Resources */,
 				D52FC221222A434F00BFC7D2 /* LaunchScreen.storyboard in Resources */,
 				D52FC21E222A434F00BFC7D2 /* Assets.xcassets in Resources */,
 				D52FC21C222A434D00BFC7D2 /* Main.storyboard in Resources */,
+				D56907B72232BB94004FB2F6 /* godoMaum.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,8 +167,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D52FC22B222A481D00BFC7D2 /* ShopViewController.swift in Sources */,
+				D52555EB22343E1600CE6BBE /* BasicViewController.swift in Sources */,
+				D52555E62234198E00CE6BBE /* MenuViewController.swift in Sources */,
 				D52FC219222A434D00BFC7D2 /* ViewController.swift in Sources */,
 				D52FC229222A458800BFC7D2 /* MoneyDataEnum.swift in Sources */,
+				D52555ED22343E2700CE6BBE /* VoiceSettingViewController.swift in Sources */,
 				D52FC217222A434D00BFC7D2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
