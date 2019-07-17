@@ -121,7 +121,9 @@ class ShopViewController: UIViewController {
         speakSound("\(moneyLabel.text!) 입니다.")
     }
     func speakSound(_ text: String) {
-        
+		if (synthesizer.isSpeaking) {
+			return ;
+		}
         let utterance : AVSpeechUtterance = AVSpeechUtterance(string: text)
 
         if selectedVoiceIdentifier != nil {
