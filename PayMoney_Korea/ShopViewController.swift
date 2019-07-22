@@ -16,7 +16,8 @@ class ShopViewController: UIViewController {
     let YUNA_EXT_IDENTIFIER = "com.apple.ttsbundle.Yuna-premium"
     let SORA_IDENTIFIER = "com.apple.ttsbundle.Sora-compact"
     let SORA_EXT_IDENTIFIER = "com.apple.ttsbundle.Sora-premium"
-    
+	
+	let MAX_PAYING_MONEY = 1000000
     @IBOutlet var moneyLabel: UILabel!
     
     @IBOutlet var payingMoneyLabel: UILabel!
@@ -27,15 +28,20 @@ class ShopViewController: UIViewController {
     var gameMode : GameMode = GameMode.Payment_Easy
     var isPlaying : Bool = false
     
-    var timer = Timer()
-    
     let synthesizer = AVSpeechSynthesizer()
     
     var moneyList : [(value :Int, text :String)]! = []
-    var payingMoney : Int = 0 {
-        didSet {
-            payedMoneyCalculate()
-        }
+	private var _payingMoney : Int = 0
+    var payingMoney : Int {
+		get {
+			return _payingMoney
+		} set (newValue) {
+			if ( newValue <= MAX_PAYING_MONEY ) {
+				_payingMoney = newValue
+				payedMoneyCalculate()
+				
+			}
+		}
     }
     
     var selectedVoiceIdentifier : String?
@@ -54,8 +60,6 @@ class ShopViewController: UIViewController {
         selectedVoiceIdentifier = UserDefaults.standard.string(forKey: "ChoiceVoice")
         setMoneyList()
         startGame()
-        
-        timer.invalidate()
         
         self.gameFinishView.isHidden = true
         
@@ -83,9 +87,6 @@ class ShopViewController: UIViewController {
         }
         isPlaying = false
         greatView.isHidden = false
-        
-        // start the timer
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
         
     }
     
@@ -143,11 +144,17 @@ class ShopViewController: UIViewController {
     }
     
     // MARK : Timer
-    @objc func timerAction() {
-        startGame()
-        timer.invalidate()
-    }
+//    @objc func timerAction() {
+//        startGame()
+//        timer.invalidate()
+//    }
 
+	// MARK : 게임 재시작 버튼
+	
+	@IBAction func onClickGameStartInGreatView(_ sender: Any) {
+		startGame()
+	}
+	
     // MARK : Money 버튼들
     
     
